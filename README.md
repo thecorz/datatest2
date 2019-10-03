@@ -15,3 +15,21 @@ Use this dataset: http://resources.xperthr.co.uk/surveys/salary/Sample/Work_Test
 #### Outputs
 * Working code that fits a model 
 * Prediction accuracy score metric named "c1_score" for a 30% test sample
+
+
+## SOLUTION
+
+### Set up
+Install the packages in `requirements.txt` file. Run
+
+`git install requirements.txt`
+
+### EDA
+EDA in jupyter notebook `code/data_scientist_work_test_brief.ipynb`
+
+### Model module
+module in `xperthr_data_test.py`
+
+the workflow is in `run.py`. Run the script with the file `data/Work_Test_-_synthetic_data_ds.xlsx` to get the 'f1_score' of the model:
+
+`python3 run.py data/Work_Test_-_synthetic_data_ds.xlsx`

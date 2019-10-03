@@ -21,7 +21,7 @@ def load_data_file(file):
     file: string with the path to file
     """
 #     socket = urllib.request.urlopen(link)
-    xd = pd.ExcelFile(link)
+    xd = pd.ExcelFile(file)
     df = xd.parse(xd.sheet_names[0], header=0)
     return df
 
@@ -109,6 +109,6 @@ def fit_gaussiannb(X_train, y_train, X_test, y_test):
     result['model'] = gnb.fit(X_train, y_train)
     
     result['predictions'] = gnb.predict(X_test)
-    result['f1_score'] = f1_score(y_test, result['gnb_preds'], average='micro')
+    result['f1_score'] = f1_score(y_test, result['predictions'], average='micro')
     
     return result
