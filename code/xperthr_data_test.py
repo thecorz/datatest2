@@ -15,7 +15,17 @@ from sklearn.naive_bayes import GaussianNB
 
 import xlrd
 
-def load_data(link):
+def load_data_file(file):
+    """
+    Load data from a link pointing to a excel file
+    file: string with the path to file
+    """
+#     socket = urllib.request.urlopen(link)
+    xd = pd.ExcelFile(link)
+    df = xd.parse(xd.sheet_names[0], header=0)
+    return df
+
+def load_data_link(link):
     """
     Load data from a link pointing to a excel file
     link: string
@@ -24,6 +34,7 @@ def load_data(link):
     xd = pd.ExcelFile(link)
     df = xd.parse(xd.sheet_names[0], header=0)
     return df
+
 
 def transform_data(df):
     """
